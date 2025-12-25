@@ -1,0 +1,6 @@
+server:
+  port: 8084
+# feign
+#feign:
+#  hystrix:
+#    enabled: true
