@@ -9,33 +9,25 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>user-service</artifactId>
-
-
+    <artifactId>gateway-service</artifactId>
     <dependencies>
+        <!-- Spring Boot Web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
-<!--        feign-->
+
+        <!-- Spring Cloud Gateway -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-            <version>4.1.1</version>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
+            <version>4.0.9</version> <!-- 4.0.x 版本 -->
         </dependency>
-
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-circuitbreaker-resilience4j</artifactId>
+            <artifactId>spring-cloud-gateway-server</artifactId>
+            <version>4.0.9</version> <!-- 4.0.x 版本  保证没有headerset依赖问题-->
         </dependency>
-
-
-<!--        hystrix停止维护了-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>-->
-
-<!--        </dependency>-->
 
 
     </dependencies>

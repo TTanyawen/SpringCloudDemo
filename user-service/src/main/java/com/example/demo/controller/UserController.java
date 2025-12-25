@@ -35,4 +35,3 @@ public class UserController {
         return "服务暂时不可用，请稍后再试。";
     }
 }
-//我有一个多模块项目，user-service和pay-service，现在我想新建一个gateway-service来统一访问接口并转发请求，并在请求到来时做一些权限校验(模拟就可以，打印一句话)
