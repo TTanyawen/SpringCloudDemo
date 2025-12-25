@@ -1,6 +1,24 @@
 server:
   port: 8084
-# feign
-#feign:
-#  hystrix:
-#    enabled: true
+
+#  resilience4j 熔断策略配置
+resilience4j:
+  circuitbreaker:
+    instances:
+      breaker01:
+        registerHealthIndicator: true
+        slidingWindowSize: 10
+        minimumNumberOfCalls: 5
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10000 # 10 秒
+        permittedNumberOfCallsInHalfOpenState: 3
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+      breaker02:
+        registerHealthIndicator: true
+        slidingWindowSize: 10
+        minimumNumberOfCalls: 5
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10000 # 10 秒
+        permittedNumberOfCallsInHalfOpenState: 3
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+
